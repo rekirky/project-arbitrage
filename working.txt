@@ -1,0 +1,16 @@
+Area to store working thoughts on the project
+
+
+What sites to scrape?
+bet365.com.au
+sportsbet.com.au
+ladbrokes.com.au
+betm.com.au
+unibet.com.au
+tab.com.au
+
+0 1
+2 3 4 5
+6 7 
+8 9 10 11
+

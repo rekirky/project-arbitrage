@@ -1,11 +1,12 @@
+def get_bets():
+    # To-Do get input to get 4 odds
+    return(2,1.82,1.94,1.87)
 
 def check_for_opp(odds):
     if(min((1/odds[0]+(1/odds[1])),(1/odds[0]+(1/odds[3])),(1/odds[2]+(1/odds[1])),(1/odds[2]+(1/odds[3])))<1):
         return(True)
-        
-def get_bets():
-    # To-Do get input to get 4 odds
-    return(1.9,2.2,1,2.3)
+    else:
+        return(False)
 
 def arb_combination(odds):
     sum = 0
@@ -37,16 +38,17 @@ def calculate_profit(bet,odd, wager):
     
     
 def main():
-    wager = 200   
+    wager = 50   
     odds = get_bets()
     if check_for_opp(odds) == False:
         print("No op exists, exiting")
-    odd = arb_combination(odds)
-    bet = calculate_bet(wager,odd,wager)
-    profit = (calculate_profit(bet,odd,wager))
-    print("An Arbitrage opportunity exists")
-    print(f"Odds to use are {odd[0]} & {odd[1]}")
-    print(f"Place ${bet[0]} on {odd[0]} & ${bet[1]} on {odd[1]}")
-    print(f"Profit against a total bet of {wager} is ${profit} ({(profit/wager)*100}% return)")
+    else:    
+        odd = arb_combination(odds)
+        bet = calculate_bet(wager,odd,wager)
+        profit = (calculate_profit(bet,odd,wager))
+        print("An Arbitrage opportunity exists")
+        print(f"Odds to use are {odd[0]} & {odd[1]}")
+        print(f"Place ${bet[0]} on {odd[0]} & ${bet[1]} on {odd[1]}")
+        print(f"Profit against a total bet of {wager} is ${profit} ({(profit/wager)*100}% return)")
           
 main()
